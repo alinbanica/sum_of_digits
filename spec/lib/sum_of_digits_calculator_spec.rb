@@ -1,24 +1,30 @@
 require 'spec_helper'
 require_relative '../../lib/sum_of_digits_calculator.rb'
 
+RSpec.shared_examples 'calculating_sum_of_digits' do
+  describe 'calculate sum of digits for input number' do
+    it { is_expected.to eq(calculated_sum) }
+  end
+end
+
 RSpec.describe SumOfDigitsCalculator do
 
-  subject { described_class.calculate_sum(num) }
+  subject { described_class.calculate_sum(input_num) }
 
   context 'when a valid input number provided' do
-    describe 'calculate sum of digits for number 16' do
-      let(:num) { 16 }
-      it { is_expected.to eq(7) }
+    it_behaves_like 'calculating_sum_of_digits' do
+      let(:input_num) { 16 }
+      let(:calculated_sum) { 7 }
     end
 
-    describe 'calculate sum of digits for number 942' do
-      let(:num) { 6 }
-      it { is_expected.to eq(6) }
+    it_behaves_like 'calculating_sum_of_digits' do
+      let(:input_num) { 942 }
+      let(:calculated_sum) { 6 }
     end
 
-    describe 'calculate sum of digits for number 99999999999' do
-      let(:num) { 99999999999 }
-      it { is_expected.to eq(9) }
+    it_behaves_like 'calculating_sum_of_digits' do
+      let(:input_num) { 99999999999 }
+      let(:calculated_sum) { 9 }
     end
   end
 
