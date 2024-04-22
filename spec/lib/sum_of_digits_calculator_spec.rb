@@ -13,7 +13,7 @@ RSpec.describe SumOfDigitsCalculator do
 
     describe 'calculate sum of digits for number 942' do
       let(:num) { 6 }
-      it { is_expected.to eq(7) }
+      it { is_expected.to eq(6) }
     end
 
     describe 'calculate sum of digits for number 99999999999' do
