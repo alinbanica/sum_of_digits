@@ -26,6 +26,11 @@ RSpec.describe SumOfDigitsCalculator do
       let(:input_num) { 99999999999 }
       let(:calculated_sum) { 9 }
     end
+
+    it_behaves_like 'calculating_sum_of_digits' do
+      let(:input_num) { 5 }
+      let(:calculated_sum) { 5 }
+    end
   end
 
 end
