@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+require './lib/sum_of_digits_calculator'
+
+raise "Please provide a valid number (greater or equal with 0) as an input!" unless /^[0-9][0-9]*$/.match(ARGV.first)
+
+sum = SumOfDigitsCalculator.calculate_sum(ARGV.first.to_i)
+
+puts "For the provided input #{ARGV.first}, the single digits sum is #{sum}"

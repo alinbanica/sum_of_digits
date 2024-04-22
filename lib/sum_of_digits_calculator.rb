@@ -7,6 +7,8 @@
 class SumOfDigitsCalculator
 
   def self.calculate_sum(num)
+    return num if num < 10
+
     sum = 0
 
     loop do
@@ -14,7 +16,7 @@ class SumOfDigitsCalculator
       break if (num = num / 10) == 0
     end
 
-    sum < 10 ? sum : self.calculate_sum(sum)
+    self.calculate_sum(sum)
   end
 
 end
